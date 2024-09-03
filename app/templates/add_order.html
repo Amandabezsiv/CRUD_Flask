@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Pedido</title>
+</head>
+<body>
+    <h1>Adicionar Novo Pedido</h1>
+    <form method="post">
+        Cliente: 
+        <select name="customer_id" required>
+            {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.name }}</option>
+            {% endfor %}
+        </select><br>
+        Status: <input type="text" name="status" value="Pendente"><br>
+        <input type="submit" value="Adicionar Pedido">
+    </form>
+    <a href="{{ url_for('list_orders') }}">Voltar à Lista de Pedidos</a>
+</body>
+</html>

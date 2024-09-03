@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Pedido</title>
+</head>
+<body>
+    <h1>Editar Pedido</h1>
+    <form method="post">
+        Cliente: 
+        <select name="customer_id" required>
+            {% for customer in customers %}
+                <option value="{{ customer.id }}" {% if customer.id == order.customer_id %}selected{% endif %}>
+                    {{ customer.name }}
+                </option>
+            {% endfor %}
+        </select><br>
+        Status: <input type="text" name="status" value="{{ order.status }}"><br>
+        <input type="submit" value="Atualizar Pedido">
+    </form>
+    <a href="{{ url_for('list_orders') }}">Voltar à Lista de Pedidos</a>
+</body>
+</html>
