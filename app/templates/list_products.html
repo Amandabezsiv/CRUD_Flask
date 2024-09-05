@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <table border="1" id="products">
+        <tr>
+            <th>ID</th>
+            <th>Nome do Produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Ações</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.stock }}</td>
+            <td>
+                <a href="{{ url_for('edit_product', id=product.id) }}">Editar</a> | 
+                <form action="{{ url_for('delete_product', id=product.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('add_product') }}">Adicionar Novo Produto</a>
+</body>
+</html>

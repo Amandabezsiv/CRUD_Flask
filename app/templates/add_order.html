@@ -11,7 +11,7 @@
         Cliente: 
         <select name="customer_id" required>
             {% for customer in customers %}
-                <option value="{{ customer.id }}"></option>
+                <option value="{{ customer.id }}">{{ customer.id }},{{customer.name}}</option>
             {% endfor %}
         </select><br>
         Status: <input type="text" name="status" value="Pendente"><br>

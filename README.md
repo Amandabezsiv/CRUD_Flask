@@ -14,22 +14,28 @@ This project is a simple CRUD (Create, Read, Update, Delete) application built u
 ```plaintext
 CRUD_Flask/
 ├── app/
+│   ├── __pycache__/
+│   ├── static/
+│   │   └── css/
+│   │       └── styles.css
+│   ├── templates/
+│   │   ├── add_customer.html
+│   │   ├── add_order.html
+│   │   ├── add_order_item.html
+│   │   ├── add_product.html
+│   │   ├── edit_customers.html
+│   │   ├── edit_order.html
+│   │   ├── edit_order_item.html
+│   │   ├── edit_product.html
+│   │   ├── list_customers.html
+│   │   ├── list_orders.html
+│   │   └── list_products.html
 │   ├── __init__.py
 │   ├── models.py
 │   ├── routes.py
-│   └── templates/
-│       ├── index.html
-│       ├── add_customer.html
-│       ├── list_customers.html
-│       ├── edit_customer.html
-│       ├── add_product.html
-│       ├── list_products.html
-│       ├── edit_product.html
-│       ├── list_orders.html
-│       ├── add_order.html
-│       ├── edit_order.html
-│       ├── add_order_item.html
-│       └── edit_order_item.html
+├── .gitignore
+├── main.py
+└── README.md
 ```
 
 ## Setup Instructions
