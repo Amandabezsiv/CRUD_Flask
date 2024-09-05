@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Adicionar Item ao Pedido</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <center>
     <h1>Adicionar Item ao Pedido</h1>
     <form method="post">
         Pedido: 
@@ -20,8 +22,9 @@
         </select><br>
         Quantidade: <input type="number" name="quantity" required><br>
         Preço: <input type="number" step="0.01" name="price" required><br>
-        <input type="submit" value="Adicionar Item">
+        <input type="submit" value="Adicionar Item", class="button">
     </form>
     <a href="{{ url_for('list_orders') }}">Voltar à Lista de Pedidos</a>
+    </center>
 </body>
 </html>

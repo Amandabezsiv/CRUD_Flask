@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Editar Pedido</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <center>
     <h1>Editar Pedido</h1>
     <form method="post">
         Cliente: 
@@ -15,8 +17,9 @@
             {% endfor %}
         </select><br>
         Status: <input type="text" name="status" value="{{ order.status }}"><br>
-        <input type="submit" value="Atualizar Pedido">
+        <input type="submit" value="Atualizar Pedido", class = "button">
     </form>
     <a href="{{ url_for('list_orders') }}">Voltar à Lista de Pedidos</a>
+    </center>
 </body>
 </html>

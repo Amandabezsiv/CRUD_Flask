@@ -2,16 +2,19 @@
 <html>
 <head>
     <title>Editar Produto</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <center>
     <h1>Editar Produto</h1>
     <form method="post">
         Nome: <input type="text" name="name" value="{{ product.name }}" required><br>
-        Descrição: <textarea name="description">{{ product.description }}</textarea><br>
+        Descrição: <textarea name="description"></textarea><br>
         Preço: <input type="number" step="0.01" name="price" value="{{ product.price }}" required><br>
         Estoque: <input type="number" name="stock" value="{{ product.stock }}" required><br>
-        <input type="submit" value="Atualizar">
+        <input type="submit" value="Atualizar", class="button">
     </form>
     <a href="{{ url_for('list_products') }}">Voltar à Lista de Produtos</a>
+    </center>
 </body>
 </html>

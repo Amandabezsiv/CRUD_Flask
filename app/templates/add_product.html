@@ -2,16 +2,19 @@
 <html>
 <head>
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <center>
     <h1>Adicionar Novo Produto</h1>
     <form method="post">
         Nome: <input type="text" name="name" required><br>
         Descrição: <textarea name="description"></textarea><br>
         Preço: <input type="number" step="0.01" name="price" required><br>
         Estoque: <input type="number" name="stock" required><br>
-        <input type="submit" value="Adicionar">
+        <input type="submit" value="Adicionar", class="button">
     </form>
     <a href="{{ url_for('list_products') }}">Voltar à Lista</a>
+    </center>
 </body>
 </html>

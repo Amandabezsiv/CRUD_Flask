@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash
-# from app import db
 from app import app, db
 from app.models import Customer, Order, Product, OrderItem
+
 @app.route('/customers')
 def list_customers():
     customers = Customer.query.all()
