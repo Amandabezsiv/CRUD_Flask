@@ -1,3 +1,20 @@
-# Python
-*.pyc
+# Ignorar ambiente virtual
+venv/
 __pycache__/
+
+# Arquivos de log
+*.log
+
+# Arquivos de banco de dados local
+*.sqlite3
+*.db
+
+# Ignorar arquivos de configuração sensíveis
+.env
+config.py
+
+# Arquivos gerados pelo Alembic
+migrations/
+
+# Docker e build-related files (caso tenha informações sensíveis no Docker)
+*.pid

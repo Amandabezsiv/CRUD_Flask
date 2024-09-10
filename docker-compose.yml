@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 852456.Ama
+      MYSQL_DATABASE: store_db
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+    volumes:
+      - db_data:/var/lib/mysql
+
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 852456.Ama
+      DATABASE_NAME: store_db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db_data:
